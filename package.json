@@ -5,7 +5,9 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production babel src -d dist --copy-files"
+    "build": "NODE_ENV=production babel src -d dist --copy-files",
+    "lint": "eslint index.js src .eslintrc.js"
+
   },
   "files": [
     "dist/**/*",
@@ -17,6 +19,8 @@
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
+    "eslint": "^7.20.0",
+    "eslint-plugin-react": "^7.22.0",
     "memfs": "^3.2.0",
     "next": "*",
     "react": "*",

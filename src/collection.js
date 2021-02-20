@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 export class Entry extends React.Component {
   static fromEntry([path, entry]) {
-    const { default: content, ...rest } = entry
-    const Content = entry.default
-    return <Entry key={path} path={path} {...rest}><Content/></Entry>
+    const { default: _content, ...rest } = entry;
+    const Content = entry.default;
+    return <Entry key={path} path={path} {...rest}><Content/></Entry>;
   }
 
   render() {
@@ -12,23 +12,23 @@ export class Entry extends React.Component {
       <>
         {this.props.children}
       </>
-    )
+    );
   }
 }
 
 function compare(a, b) {
   if (a < b) {
-    return -1
+    return -1;
   }
   if (a > b) {
-    return 1
+    return 1;
   }
 
-  return 0
+  return 0;
 }
 
 export class Collection extends Array {
   sortBy(f) {
-    return this.sort((a, b) => compare(f(a), f(b)))
+    return this.sort((a, b) => compare(f(a), f(b)));
   }
 }
