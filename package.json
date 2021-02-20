@@ -1,0 +1,29 @@
+{
+  "name": "next-index",
+  "version": "0.0.1",
+  "description": "Very simple index for next",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production babel src -d dist --copy-files"
+  },
+  "files": [
+    "dist/**/*",
+    "index.js"
+  ],
+  "author": "Tom Ward",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "memfs": "^3.2.0",
+    "next": "*",
+    "react": "*",
+    "webpack": "^5.11.1"
+  },
+  "peerDependencies": {
+    "next": "*",
+    "react": "*",
+    "react-dom": "*"
+  }
+}
