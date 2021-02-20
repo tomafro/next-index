@@ -1,5 +1,5 @@
 {
-  "name": "next-index",
+  "name": "@tomafro/next-index",
   "description": "Very simple index for next",
   "homepage": "https://github.com/tomafro/next-index",
   "version": "0.0.1",
@@ -26,5 +26,8 @@
     "next": "*",
     "react": "*",
     "react-dom": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
