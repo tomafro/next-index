@@ -12,7 +12,7 @@ module.exports = function(_content) {
   const collection = files.map(file => `  "${directory}/${file}": require("./${file}")`).join(",\n");
 
   callback(null, `
-    import { Collection, Entry } from "next-index/dist/collection"
+    import { Collection, Entry } from "@tomafro/next-index/dist/collection"
 
     export default Collection.from(Object.entries({
       ${collection}

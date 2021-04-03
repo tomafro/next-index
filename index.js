@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = ({ ...nextConfig } = {}) => {
   return Object.assign({}, nextConfig, {
-    webpack(config, _options) {
+    webpack(config, options) {
       config.module.rules.push({
         test: /\.index/,
         use: [{
@@ -10,7 +10,13 @@ module.exports = ({ ...nextConfig } = {}) => {
           options: config
         }]
       });
-      return config;
+
+      if (typeof nextConfig.webpack === "function") {
+        return nextConfig.webpack(config, options);
+      }
+      else {
+        return config;
+      }
     }
   });
 };
