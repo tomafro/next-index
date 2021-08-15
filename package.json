@@ -2,7 +2,7 @@
   "name": "@tomafro/next-index",
   "description": "Very simple index for next",
   "homepage": "https://github.com/tomafro/next-index",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production babel src -d dist --copy-files",
@@ -19,7 +19,6 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@mdx-js/loader": "*",
-    "@tomafro/next-index": "file:.",
     "babel-jest": "^26.6.3",
     "eslint": "^7.23.0",
     "eslint-plugin-jest": "^24.3.4",
@@ -27,7 +26,9 @@
     "jest": "^26.6.3",
     "memfs": "^3.2.0",
     "next": "*",
+    "node-eval": "^2.0.0",
     "react": "*",
+    "require-from-string": "^2.0.2",
     "webpack": "^5.11.1"
   },
   "peerDependencies": {

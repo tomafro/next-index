@@ -1,10 +1,9 @@
 import React from "react";
-
 export class Entry extends React.Component {
   static fromEntry([path, entry]) {
-    const { default: _content, ...rest } = entry;
-    const Content = entry.default;
-    return <Entry key={path} path={path} {...rest}><Content/></Entry>;
+    const { default: _content, ...rest } = entry.module;
+    const Content = entry.module.default;
+    return <Entry _content={entry.module.default} {...rest}><Content/></Entry>
   }
 
   render() {

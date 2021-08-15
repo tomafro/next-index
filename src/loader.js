@@ -6,10 +6,14 @@ module.exports = function(_content) {
   this.addContextDependency(directory);
 
   const files = this.fs.readdirSync(directory).filter(file => {
-    return path.extname(file) == ".mdx";
+    const ext = path.extname(file)
+    return ext == ".mdx" || ext == ".js"
   });
 
-  const collection = files.map(file => `  "${directory}/${file}": require("./${file}")`).join(",\n");
+  const collection = files.map(file =>
+  `    "${directory}/${file}": {
+        module: require("${directory}/${file}")
+      }`).join(",\n") ;
 
   callback(null, `
     import { Collection, Entry } from "@tomafro/next-index/dist/collection"

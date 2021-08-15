@@ -2,7 +2,7 @@ import path from "path";
 import webpack from "webpack";
 import { createFsFromVolume, Volume } from "memfs";
 
-import withIndex from "@tomafro/next-index";
+import withIndex from "../index.js";
 
 const options = withIndex({
   pageExtensions: ["js", "jsx", "md", "mdx"]
@@ -17,7 +17,11 @@ export default (fixture, _options = {}) => {
         path: path.resolve(__dirname),
         filename: "bundle.js",
       },
-      module: { rules: [] }
+      module: { rules: [] },
+      resolve: {
+        alias: {
+          "@tomafro/next-index": "/Users/tom/Work/tomafro/next-index/"
+      }}
     })
   );
 
